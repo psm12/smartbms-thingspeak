@@ -19,7 +19,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]
 	fi
 	echo "Downloading..."
 
-	wget https://github.com/123electric/smartbms-thingspeak/archive/main.zip
+	wget https://github.com/psm12/smartbms-thingspeak.git
 	unzip main.zip
 	rm main.zip
 	systemctl is-active --quiet smartbms.service && systemctl stop smartbms.service
