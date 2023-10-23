@@ -19,9 +19,9 @@ if [[ $REPLY =~ ^[Yy]$ ]]
 	fi
 	echo "Downloading..."
 
-	wget https://github.com/psm12/smartbms-thingspeak.git
-	# unzip main.zip
-	# rm main.zip
+	wget https://github.com/psm12/smartbms-thingspeak/archive/refs/heads/branch.zip
+	unzip branch.zip
+	rm branch.zip
 	systemctl is-active --quiet smartbms.service && systemctl stop smartbms.service
 	mv smartbms-thingspeak-main "${INSTALL_DIR}"
 	python3 -m pip install -e "${INSTALL_DIR}"
