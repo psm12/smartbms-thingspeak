@@ -17,11 +17,11 @@ if [[ $REPLY =~ ^[Yy]$ ]]
 		echo "Cannot install, directory ${INSTALL_DIR} already exists..."
 		exit
 	fi
-	echo "Downloading..."
-
-	wget https://github.com/123electric/smartbms-thingspeak/archive/main.zip
-	unzip main.zip
-	rm main.zip
+	# echo "Downloading..."
+ echo "code should be in subdir smartbms-thingspeak-main"
+	# wget https://github.com/123electric/smartbms-thingspeak/archive/main.zip
+	# unzip main.zip
+	# rm main.zip
 	systemctl is-active --quiet smartbms.service && systemctl stop smartbms.service
 	mv smartbms-thingspeak-main "${INSTALL_DIR}"
 	python3 -m pip install -e "${INSTALL_DIR}"
